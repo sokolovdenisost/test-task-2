@@ -3,6 +3,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 :root {
@@ -29,6 +30,7 @@ body {
   width: 1140px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: -1;
 }
 
 .background {
@@ -49,6 +51,7 @@ body {
 
 .header-logo {
   width: 165px;
+  color: var(--white);
 }
 
 .header-logo__image {
@@ -73,11 +76,11 @@ body {
 }
 
 .header-nav__item {
-  margin-right: 30px;
+  margin-left: 30px;
 }
 
-.header-nav__item:last-child {
-  margin-right: 0;
+.header-nav__item:first-child {
+  margin-left: 0;
 }
 
 .header-nav__item-link {
@@ -118,7 +121,6 @@ body {
 .main {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
   margin: 90px auto 124px;
 }
 
@@ -146,6 +148,7 @@ body {
 }
 
 .main-right {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -298,8 +301,207 @@ body {
   line-height: 15px;
 }
 
+.footer-copyright__text {
+  margin-bottom: 5px;
+}
+
 .footer-copyright__link {
-  margin-top: 5px;
   color: var(--white);
   text-decoration: underline;
+}
+
+
+@media screen and (max-width: 1160px) {
+  .container {
+    width: 290px;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--black);
+    padding: 20px 16px;
+    z-index: 2;
+  }
+
+  .header-logo {
+    display: none;
+  }
+
+  .header-nav {
+    margin: 0 auto;
+  }
+
+  .header-nav__item {
+    margin-left: 16px;
+  }
+
+  .header-nav__item:last-child {
+    display: none;
+  }
+
+  .header-nav__item-link {
+    font-size: 12px;
+    line-height: 14.52px;
+    text-transform: uppercase;
+  }
+
+  .header-contacts {
+    display: none;
+  }
+
+  .backgroundContainer {
+    display: none;
+  }
+
+  .main {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 40px 0 60px;
+  }
+
+  .main:after {
+    content: '';
+    position: absolute;
+    background: url("./images/bg.png") no-repeat;
+    background-size: cover;
+    height: 445px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 60px;
+    z-index: -1;
+  }
+
+  .main-left {
+    margin-bottom: 45px;
+  }
+
+  .main-left__title {
+    width: 100%;
+    font-size: 36px;
+    line-height: 43.57px
+  }
+
+  .main-left__text {
+    font-size: 18px;
+    line-height: 21.94px;
+    margin-top: 15px;
+  }
+
+  .main-right {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .main-right__text {
+    text-align: left;
+  }
+
+  .main-right__text span {
+    text-transform: lowercase;
+  }
+
+  .main-right__list {
+    margin: 20px 0 0;
+    grid-gap: 14px 10px;
+  }
+
+  .main-right__item {
+    position: relative;
+  }
+
+  .main-right__item:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    left: 0;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, #FCB045 36.99%, #FD1D1D 100%);
+    transform: translateY(-50%);
+  }
+
+  .main-right__item-title {
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 15.85px;
+    letter-spacing: 0.05em;
+    margin-left: 15px;
+    margin-bottom: 0;
+  }
+
+  .main-right__item-text {
+    display: none;
+  }
+
+  .main-right__button {
+    display: none;
+  }
+
+  .footer {
+    padding-top: 40px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+  }
+
+  .footer-column {
+    margin-bottom: 30px;
+  }
+
+  .footer-column:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer-column:nth-child(2) {
+    margin: 0 0 30px;
+  }
+
+  .footer-column:nth-child(2) .footer-column__list {
+    grid-template-columns: 100px 123px;
+  }
+
+  .footer-column__heading {
+    font-size: 12px;
+    line-height: 14.52px;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-column__item-link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .footer-column:nth-child(3) .footer-column__heading {
+    text-align: left;
+  }
+
+  .footer-column__body {
+    text-align: left;
+  }
+
+  .footer-column__socials {
+    justify-content: flex-start;
+    margin: 8px 0 10px;
+  }
+
+  .footer-column__social-image {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer-column__address {
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+
+  .footer-copyright {
+    text-align: left;
+    margin-top: 50px;
+    padding-bottom: 60px;
+  }
 }
